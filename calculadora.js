@@ -8,19 +8,24 @@ const buttonMult = document.createElement("button")
 const buttonVezes = document.createElement("button")
 const buttonDiv = document.createElement("button")
 const resultado = document.createElement("p")
-resultado.createTextNode = "jnmasfdasf"
+resultado.textContent = "resultado"
+resultado.classList.add = "operacao"
 imput1.style.padding = "5px 20px"
+imput1.type = "number"
+imput2.type = "number"
 imput2.style.padding = "5px 20px"
 buttonSoma.style.padding = "20px 40px"
 buttonMult.style.padding = "20px 40px"
 buttonVezes.style.padding = "20px 40px"
 buttonDiv.style.padding = "20px 40px"
-buttonSoma.addEventListener("click",()=>{
+buttonSoma.addEventListener("click", soma);
+function soma(){
     let n1 = imput1.value;
     let n2 = imput2.value;
-    let soma = n1+n2
+    let soma = parseInt(n1)+parseInt(n2)
+    document.querySelector(".operacao").innerHTML = soma;
     return soma
-})
+}
 document.body.style.height = "100vh"
 document.body.style.alignItems = "center"
 document.body.style.display = "flex"

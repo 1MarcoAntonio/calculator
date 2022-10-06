@@ -10,26 +10,35 @@ const buttonDiv = document.createElement("button")
 const resultado = document.createElement("p")
 resultado.textContent = "resultado"
 resultado.classList.add = "operacao"
+
 imput1.style.padding = "5px 20px"
 imput1.type = "number"
 imput2.type = "number"
 imput2.style.padding = "5px 20px"
+
 buttonSoma.style.padding = "20px 40px"
 buttonMult.style.padding = "20px 40px"
 buttonVezes.style.padding = "20px 40px"
 buttonDiv.style.padding = "20px 40px"
 buttonSoma.addEventListener("click", soma);
-function soma(){
-    let n1 = imput1.value;
-    let n2 = imput2.value;
-    let soma = parseInt(n1)+parseInt(n2)
-    document.querySelector(".operacao").innerHTML = soma;
-    return soma
-}
+
 document.body.style.height = "100vh"
 document.body.style.alignItems = "center"
 document.body.style.display = "flex"
 document.body.style.justifyContent = "center"
+
+function soma(){
+    let n1 = imput1.value;
+    let n2 = imput2.value;
+    let soma = parseInt(n1)+parseInt(n2)
+    let n3 = "operaçao invalida" 
+    if( n1 === Number &&  n2 === Number){
+         document.querySelector(".operacao").innerHTML = resultado.value = soma;
+    }else {
+         document.querySelector(".operacao").innerHTML = resultado.textContent = n3;
+
+    }
+}
 
 div1.appendChild(imput1)
 div1.appendChild(imput2)
@@ -37,10 +46,10 @@ div2.appendChild(buttonSoma)
 div2.appendChild(buttonMult)
 div2.appendChild(buttonVezes)
 div2.appendChild(buttonDiv)
+div2.appendChild(resultado)
 div2.style.position = "absolute"
 div2.style.bottom = "417px"
 
-document.body.appendChild(resultado)
 document.body.appendChild(div1)
 document.body.appendChild(div2)
 
